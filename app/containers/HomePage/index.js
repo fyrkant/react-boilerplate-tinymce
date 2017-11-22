@@ -10,17 +10,20 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import tinymce from 'tinymce'; // eslint-disable-line no-unused-vars
+import 'tinymce/themes/modern';
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/paste';
 import { Editor } from '@tinymce/tinymce-react';
-import messages from './messages';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-        <Editor initialValue="<p>Hello world</p>" />
-      </h1>
+      <Editor
+        id="test"
+        initialValue="<p>Hello world</p>"
+        init={{ plugins: 'link paste' }}
+      />
     );
   }
 }

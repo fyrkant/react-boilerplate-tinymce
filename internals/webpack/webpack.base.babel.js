@@ -25,8 +25,10 @@ module.exports = (options) => ({
       // So, no need for ExtractTextPlugin here.
       test: /\.css$/,
       include: /node_modules/,
+      exclude: /tinymce/,
       loaders: ['style-loader', 'css-loader'],
     }, {
+      exclude: /tinymce/,
       test: /\.(eot|svg|ttf|woff|woff2)$/,
       loader: 'file-loader',
     }, {

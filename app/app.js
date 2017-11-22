@@ -31,7 +31,15 @@ import LanguageProvider from 'containers/LanguageProvider';
 import '!file-loader?name=[name].[ext]!./favicon.ico';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 import 'file-loader?name=[name].[ext]!./.htaccess';
+
+// tinymce skin files
+require.context(
+  'file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
+  true,
+  /.*/
+);
 /* eslint-enable import/no-unresolved, import/extensions */
+/* eslint-disable import/first */
 
 import configureStore from './store';
 
